@@ -9,6 +9,12 @@
 </p>
 
 <p align="center">
+  <a href="https://banking77-intent-router-mgkdtpmzzvkqmjldzbnnpt.streamlit.app/">
+    <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Open%20App-ff4b4b?style=for-the-badge&logo=streamlit&logoColor=white"/>
+  </a>
+</p>
+
+<p align="center">
   <b>Automated intent classification system for banking customer requests</b><br/>
   <sub>Built on the Banking77 dataset · 77 intents · TF-IDF + LinearSVC</sub>
 </p>
@@ -20,6 +26,14 @@
 Banking77 Intent Router is a production-ready NLP application that automatically classifies customer banking requests into **77 fine-grained intent categories**. It routes each message to the appropriate department in real time, reducing manual triage and improving response efficiency.
 
 The interface is designed with a **luxury banking aesthetic** — dark navy, gold accents, and refined typography — making it portfolio-ready and demo-friendly.
+
+---
+
+## Live Demo
+
+🔗 **[banking77-intent-router.streamlit.app](https://banking77-intent-router-mgkdtpmzzvkqmjldzbnnpt.streamlit.app/)**
+
+> Try it directly in your browser — no installation required.
 
 ---
 
@@ -65,7 +79,7 @@ banking77-intent-router/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/akbrejnev200/banking77-intent-router.git
+git clone https://github.com/akbrejnev200-rgb/banking77-intent-router.git
 cd banking77-intent-router
 ```
 
@@ -96,7 +110,7 @@ Then open your browser at `http://localhost:8501`
 
 ## Author
 
-**akbrejnev200** · [github.com/akbrejnev200](https://github.com/akbrejnev200)
+**akbrejnev200-rgb** · [github.com/akbrejnev200-rgb](https://github.com/akbrejnev200-rgb)
 
 ---
 
