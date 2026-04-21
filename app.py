@@ -24,171 +24,159 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap');
 
 :root {
-    --navy:    #0b1628;
-    --navy2:   #112040;
-    --navy3:   #1a2f55;
-    --gold:    #c9a84c;
-    --gold2:   #e8c97a;
-    --gold3:   #f5e6b8;
-    --cream:   #faf7f0;
-    --muted:   #8a9ab8;
-    --border:  rgba(201,168,76,0.25);
+    --navy:  #0b1628;
+    --navy2: #112040;
+    --navy3: #1a2f55;
+    --gold:  #c9a84c;
+    --gold2: #e8c97a;
+    --gold3: #f5e6b8;
+    --cream: #faf7f0;
+    --muted: #8a9ab8;
+    --border: rgba(201,168,76,0.25);
 }
 
-html, body, [class*="css"] {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--cream);
-}
+/* ── Reset global Streamlit ── */
+html, body { background-color: #0b1628 !important; }
 
-/* Background dégradé luxe */
 .stApp {
-    background: linear-gradient(145deg, var(--navy) 0%, var(--navy2) 50%, #0d1e3a 100%);
-    min-height: 100vh;
+    background: linear-gradient(145deg, #0b1628 0%, #112040 50%, #0d1e3a 100%) !important;
+    min-height: 100vh !important;
 }
 
-/* Grain texture overlay */
-.stApp::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.6;
+/* Écrase TOUS les textes Streamlit */
+.stApp, .stApp p, .stApp span, .stApp div,
+.stApp label, .stApp h1, .stApp h2, .stApp h3,
+[class*="css"], .element-container {
+    color: #faf7f0 !important;
+    font-family: 'Montserrat', 'Georgia', sans-serif !important;
 }
 
 .block-container {
     padding-top: 56px !important;
-    max-width: 720px;
-    position: relative;
-    z-index: 1;
+    max-width: 720px !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
 /* ── Header ── */
 .lux-header {
-    text-align: center;
-    margin-bottom: 56px;
-    position: relative;
-    padding-bottom: 32px;
+    text-align: center !important;
+    margin-bottom: 56px !important;
+    padding-bottom: 32px !important;
 }
 .lux-eyebrow {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.6rem;
-    font-weight: 500;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 14px;
-    display: block;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.6rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.35em !important;
+    text-transform: uppercase !important;
+    color: #c9a84c !important;
+    margin-bottom: 14px !important;
+    display: block !important;
 }
 .lux-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.2rem;
-    font-weight: 300;
-    letter-spacing: 0.06em;
-    color: var(--cream);
-    margin: 0 0 6px 0;
-    line-height: 1.1;
+    font-family: 'Cormorant Garamond', 'Georgia', serif !important;
+    font-size: 3.2rem !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.06em !important;
+    color: #faf7f0 !important;
+    margin: 0 0 6px 0 !important;
+    line-height: 1.1 !important;
 }
 .lux-title em {
-    font-style: italic;
-    color: var(--gold2);
+    font-style: italic !important;
+    color: #e8c97a !important;
 }
 .lux-subtitle {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.68rem;
-    font-weight: 300;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.68rem !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    color: #8a9ab8 !important;
+    margin-top: 10px !important;
 }
 .lux-divider {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-top: 28px;
-    justify-content: center;
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    margin-top: 28px !important;
+    justify-content: center !important;
 }
 .lux-divider-line {
-    height: 1px;
-    width: 80px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    height: 1px !important;
+    width: 80px !important;
+    background: linear-gradient(90deg, transparent, #c9a84c, transparent) !important;
 }
 .lux-divider-gem {
-    color: var(--gold);
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
+    color: #c9a84c !important;
+    font-size: 0.7rem !important;
 }
 
-/* ── Card container ── */
+/* ── Card ── */
 .lux-card {
-    background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    padding: 36px 40px;
-    margin-bottom: 24px;
-    backdrop-filter: blur(10px);
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%) !important;
+    border: 1px solid rgba(201,168,76,0.25) !important;
+    border-radius: 2px !important;
+    padding: 36px 40px !important;
+    margin-bottom: 24px !important;
+    position: relative !important;
+    overflow: hidden !important;
 }
 .lux-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important; left: 0 !important; right: 0 !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, transparent, #c9a84c, transparent) !important;
 }
 
-/* ── Labels ── */
+/* ── Label ── */
 .lux-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.58rem;
-    font-weight: 500;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.58rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.3em !important;
+    text-transform: uppercase !important;
+    color: #c9a84c !important;
+    margin-bottom: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
 }
 .lux-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
+    content: '' !important;
+    flex: 1 !important;
+    height: 1px !important;
+    background: rgba(201,168,76,0.25) !important;
 }
 
 /* ── Textarea ── */
 .stTextArea > div > div > textarea {
-    background: rgba(11,22,40,0.6) !important;
-    border: 1px solid var(--border) !important;
+    background: rgba(11,22,40,0.8) !important;
+    border: 1px solid rgba(201,168,76,0.25) !important;
     border-radius: 2px !important;
-    color: var(--cream) !important;
-    font-family: 'Cormorant Garamond', serif !important;
+    color: #faf7f0 !important;
+    font-family: 'Cormorant Garamond', 'Georgia', serif !important;
     font-size: 1.05rem !important;
     font-weight: 300 !important;
     letter-spacing: 0.02em !important;
-    padding: 16px 20px !important;
-    caret-color: var(--gold) !important;
-    transition: border-color 0.3s ease !important;
-    resize: none !important;
+    caret-color: #c9a84c !important;
 }
 .stTextArea > div > div > textarea::placeholder {
     color: rgba(138,154,184,0.5) !important;
     font-style: italic !important;
 }
 .stTextArea > div > div > textarea:focus {
-    border-color: var(--gold) !important;
-    box-shadow: 0 0 0 1px rgba(201,168,76,0.15), 0 4px 24px rgba(201,168,76,0.05) !important;
+    border-color: #c9a84c !important;
+    box-shadow: 0 0 0 1px rgba(201,168,76,0.15) !important;
     outline: none !important;
 }
 
 /* ── Bouton principal ── */
 div.stButton > button[kind="primary"] {
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold2) 100%) !important;
-    color: var(--navy) !important;
+    background: linear-gradient(135deg, #c9a84c 0%, #e8c97a 100%) !important;
+    color: #0b1628 !important;
     border: none !important;
     border-radius: 2px !important;
     font-family: 'Montserrat', sans-serif !important;
@@ -197,22 +185,19 @@ div.stButton > button[kind="primary"] {
     letter-spacing: 0.28em !important;
     text-transform: uppercase !important;
     padding: 14px 36px !important;
-    transition: all 0.3s ease !important;
     box-shadow: 0 4px 20px rgba(201,168,76,0.3) !important;
     width: 100% !important;
+    transition: all 0.3s ease !important;
 }
 div.stButton > button[kind="primary"]:hover {
     box-shadow: 0 6px 30px rgba(201,168,76,0.5) !important;
-    transform: translateY(-1px) !important;
-}
-div.stButton > button[kind="primary"]:active {
-    transform: translateY(0) !important;
+    opacity: 0.9 !important;
 }
 
 /* ── Boutons exemples ── */
 div.stButton > button[kind="secondary"] {
     background: transparent !important;
-    color: var(--muted) !important;
+    color: #8a9ab8 !important;
     border: 1px solid rgba(138,154,184,0.2) !important;
     border-radius: 2px !important;
     font-family: 'Montserrat', sans-serif !important;
@@ -221,107 +206,104 @@ div.stButton > button[kind="secondary"] {
     letter-spacing: 0.12em !important;
     padding: 8px 10px !important;
     transition: all 0.25s ease !important;
-    white-space: nowrap !important;
 }
 div.stButton > button[kind="secondary"]:hover {
-    border-color: var(--gold) !important;
-    color: var(--gold2) !important;
+    border-color: #c9a84c !important;
+    color: #e8c97a !important;
     background: rgba(201,168,76,0.05) !important;
 }
 
 /* ── Résultat ── */
-.result-wrapper {
-    margin-top: 28px;
-    position: relative;
-}
 .result-card {
-    background: linear-gradient(135deg, var(--navy3) 0%, var(--navy2) 100%);
-    border: 1px solid var(--gold);
-    border-radius: 2px;
-    padding: 36px 40px;
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(135deg, #1a2f55 0%, #112040 100%) !important;
+    border: 1px solid #c9a84c !important;
+    border-radius: 2px !important;
+    padding: 36px 40px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    margin-top: 28px !important;
 }
 .result-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--gold), var(--gold2), var(--gold));
-}
-.result-card::after {
-    content: '';
-    position: absolute;
-    bottom: -60px; right: -60px;
-    width: 180px; height: 180px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important; left: 0 !important; right: 0 !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, #c9a84c, #e8c97a, #c9a84c) !important;
 }
 .result-tag {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.55rem;
-    font-weight: 500;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-    display: block;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.55rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.3em !important;
+    text-transform: uppercase !important;
+    color: #c9a84c !important;
+    margin-bottom: 20px !important;
+    display: block !important;
 }
 .result-intent {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.4rem;
-    font-weight: 300;
-    letter-spacing: 0.04em;
-    color: var(--cream);
-    margin: 0 0 24px 0;
-    line-height: 1.1;
+    font-family: 'Cormorant Garamond', 'Georgia', serif !important;
+    font-size: 2.4rem !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.04em !important;
+    color: #faf7f0 !important;
+    margin: 0 0 24px 0 !important;
+    line-height: 1.1 !important;
 }
 .result-route {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.68rem;
-    font-weight: 300;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    border-top: 1px solid rgba(201,168,76,0.15);
-    padding-top: 20px;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.68rem !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.08em !important;
+    color: #8a9ab8 !important;
+    border-top: 1px solid rgba(201,168,76,0.15) !important;
+    padding-top: 20px !important;
 }
 .result-route strong {
-    color: var(--gold2);
-    font-weight: 400;
+    color: #e8c97a !important;
+    font-weight: 400 !important;
 }
 .preprocessed-lux {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.6rem;
-    font-weight: 300;
-    letter-spacing: 0.08em;
-    color: rgba(138,154,184,0.6);
-    margin-top: 14px;
-    padding: 12px 18px;
-    border-left: 2px solid rgba(201,168,76,0.3);
-    background: rgba(255,255,255,0.01);
-    word-break: break-word;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.6rem !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.08em !important;
+    color: rgba(138,154,184,0.7) !important;
+    margin-top: 14px !important;
+    padding: 12px 18px !important;
+    border-left: 2px solid rgba(201,168,76,0.3) !important;
+    background: rgba(255,255,255,0.01) !important;
+    word-break: break-word !important;
+}
+
+/* ── Warning Streamlit restyled ── */
+.stAlert {
+    background: rgba(201,168,76,0.08) !important;
+    border: 1px solid rgba(201,168,76,0.3) !important;
+    border-radius: 2px !important;
+    color: #e8c97a !important;
 }
 
 /* ── Footer ── */
 .lux-footer {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.55rem;
-    font-weight: 300;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(138,154,184,0.4);
-    margin-top: 64px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(201,168,76,0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.55rem !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    color: rgba(138,154,184,0.4) !important;
+    margin-top: 64px !important;
+    padding-top: 24px !important;
+    border-top: 1px solid rgba(201,168,76,0.1) !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
 }
-.lux-footer-gem { color: var(--gold); opacity: 0.4; }
+.lux-footer-gem { color: #c9a84c !important; opacity: 0.4 !important; }
 
-/* ── Masquer éléments Streamlit ── */
-#MainMenu, footer, header { visibility: hidden; }
-div[data-testid="stDecoration"] { display: none; }
+/* ── Masquer éléments natifs Streamlit ── */
+#MainMenu, footer, header { visibility: hidden !important; }
+div[data-testid="stDecoration"] { display: none !important; }
+div[data-testid="stToolbar"] { display: none !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -410,10 +392,8 @@ user_input = st.text_area(
 
 st.markdown('</div>', unsafe_allow_html=True)
 
-# ── Bouton
 analyze = st.button("◈  Analyse intent", type="primary")
 
-# ── Résultat
 if analyze:
     if user_input.strip():
         cleaned    = preprocess(user_input)
@@ -423,24 +403,20 @@ if analyze:
         intent_display = pred_intent.replace("_", " ").title()
 
         st.markdown(f"""
-        <div class="result-wrapper">
-            <div class="result-card">
-                <span class="result-tag">Detected intent</span>
-                <p class="result-intent">{intent_display}</p>
-                <div class="result-route">
-                    This request will be automatically routed to the
-                    <strong>{intent_display}</strong> department.
-                </div>
+        <div class="result-card">
+            <span class="result-tag">Detected intent</span>
+            <p class="result-intent">{intent_display}</p>
+            <div class="result-route">
+                Ce message sera routé vers le service <strong>{intent_display}</strong>.
             </div>
-            <div class="preprocessed-lux">
-                Preprocessed tokens &rarr;&nbsp; {cleaned}
-            </div>
+        </div>
+        <div class="preprocessed-lux">
+            &#8594;&nbsp; {cleaned}
         </div>
         """, unsafe_allow_html=True)
     else:
         st.warning("Please enter a client message before analysing.")
 
-# ── Footer
 model_name = type(model).__name__ if model else ""
 st.markdown(f"""
 <div class="lux-footer">
